@@ -1,0 +1,28 @@
+button {
+  padding: 0.5em 1em;
+}
+.btn-small {
+  font-size: 12px;
+  border-radius: 0.4em;
+  
+}
+.btn-medium {
+  font-size: 24px;
+  border-radius: 0.4em;
+}
+.btn-large {
+  font-size: 32px;
+  border-radius: 0.4em;
+}
+.default {
+  background-color: #e0e0e0;
+  color: #3f3f3f;
+  border: none;
+}
+
+.shadow {
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.14);
+}
+.default:hover, .default:focus {
+  background-color: #aeaeae;
+}
