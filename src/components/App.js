@@ -7,9 +7,10 @@ import Button from "./Button/Button"
 const App = () => {
   return (
     <div className="container">
-      <Button type="default" />
+      <Button />
+      {/* <Button type="default" />
       <Button type="outline" />
-      <Button type="text" />
+      <Button type="text" /> */}
     </div>
   )
 }
