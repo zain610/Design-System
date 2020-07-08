@@ -1,57 +1,77 @@
-/*    */
+/*  Variables  */
 $default-bgcolor: #e0e0e0;
 $default-color: #3f3f3f;
 $default-highlight: #aeaeae;
 $primary-color: #3d5afe;
 $primary-highlight: #dce5fc;
+$white: #ffffff;
+
+@mixin border($color) {
+  border: 1.5px solid $color;
+}
 /* Base button properties -- colors, spacing and typography */
 button {
   padding: 0.5em 1em;
   margin: 1rem;
   border: none;
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.14);
+  border-radius: 0.4em;
 
 }
 /* Sizes - sm, md, lg */
 .btn-small {
   font-size: 16px;
-  border-radius: 0.4em;
 }
 .btn-medium {
   font-size: 24px;
-  border-radius: 0.4em;
 }
 .btn-large {
   font-size: 32px;
-  border-radius: 0.4em;
 }
-/* List of all colors and their outline and text variants*/
+/* Default Button and its variation*/
 .default {
   background-color: $default-bgcolor;
   color: $default-color;
+  // outline variation of the default color
   &.outline {
     background:none;
     color: $default-color;
-    border: 1.5px solid $default-color;
+    @include border($default-color);
+    &:hover, &:focus {
+      background-color: $default-highlight;
+    }
   }
+  // text variation of the default color
   &.text {
+    border: none;
+    color: $default-color;
+    background: none;
+    box-shadow: none;
+    text-decoration: underline;
+    &:hover, &:hover {
+      background-color: $default-highlight;
+    }
 
   }
-  
+  &:hover, &:focus {
+    background-color: $default-highlight;
+  }
 }
-
+/* Primary color  */
 .primary {
   background-color: $primary-color;
-  color: #ffffff;
+  color: $white;
   &.outline {
     background: none;
     color: $primary-color;
-    border: 1.5px solid $primary-color;
+    @include border($primary-color)
   }
   &.text {
     border: none;
     color: $primary-color;
     background: none;
+    box-shadow: none;
+    text-decoration: underline;
   }
 }
 
@@ -60,12 +80,12 @@ button {
 
 .secondary {
   background-color: #455a64;
-  color: #ffffff;
+  color: $white
 
 }
 .danger {
   background-color: #d32f2f;
-  color: #ffffff;
+  color: $white
 
 }
 
@@ -73,13 +93,27 @@ button {
 .disableShadow {
   box-shadow: none;
 }
-/* Variant pseudo classes */
-.default:hover, .default:focus {
-  background-color: $default-highlight;
+
+
+
+/***
+@extend: SASS feature that allows us to css properties as classes
+that can be extended and inherited. Hence allowing us to reduce duplication
+
+Use Case: The following classes have the same properties except for some minor differences. 
+.breakfast { ... }
+.lunch { ... }
+.dinner { ... }
+
+This can be written as 
+
+.meal { ... }
+.lunch {
+  @extend .meal
+  overwrite with addon properties
 }
-.outline:hover, .outline:focus {
-  background-color: $default-highlight;
-}
-.text:hover, .text:hover {
-  background-color: $default-highlight;
-}
+Now in the front end you may use ".lunch" instead of ".meal .lunch"
+
+
+*/
+

@@ -10,9 +10,9 @@ const ButtonComponent = ({ type = "default", size = "small", disableShadow = fal
   //btn-small disableShadow
   return (
     <div>
-      <button className="btn-small default">Default</button>
-      <button className="btn-small default outline">Default</button>
-      <button className="btn-small default text">Default</button>
+      <button className="btn-small primary">Default</button>
+      <button className="btn-small primary outline">Default</button>
+      <button className="btn-small primary text">Default</button>
     </div >
   )
 }
