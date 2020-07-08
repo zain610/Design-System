@@ -1,9 +1,13 @@
+/*    */
+$default-bgcolor: #e0e0e0;
+$default-color: #3f3f3f;
+$default-highlight: #aeaeae;
+$primary-color: #3d5afe;
+$primary-highlight: #dce5fc;
 /* Base button properties -- colors, spacing and typography */
 button {
   padding: 0.5em 1em;
   margin: 1rem;
-  background-color: #e0e0e0;
-  color: #3f3f3f;
   border: none;
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.14);
 
@@ -21,28 +25,39 @@ button {
   font-size: 32px;
   border-radius: 0.4em;
 }
-/* List of all variants */
-.outline {
-  background:none;
-  color: #3d5afe;
-  border: 1.5px solid #3d5afe;
-}
-.text {
-  border: none;
-  color: #3d5afe;
-  background: none;
-  box-shadow: none;
-
-}
-/* Colors */
+/* List of all colors and their outline and text variants*/
 .default {
-  background-color: #e0e0e0;
-  color: #3f3f3f;
+  background-color: $default-bgcolor;
+  color: $default-color;
+  &.outline {
+    background:none;
+    color: $default-color;
+    border: 1.5px solid $default-color;
+  }
+  &.text {
+
+  }
+  
 }
+
 .primary {
-  background-color: #3d5afe;
+  background-color: $primary-color;
   color: #ffffff;
+  &.outline {
+    background: none;
+    color: $primary-color;
+    border: 1.5px solid $primary-color;
+  }
+  &.text {
+    border: none;
+    color: $primary-color;
+    background: none;
+  }
 }
+
+
+/* Colors */
+
 .secondary {
   background-color: #455a64;
   color: #ffffff;
@@ -60,11 +75,11 @@ button {
 }
 /* Variant pseudo classes */
 .default:hover, .default:focus {
-  background-color: #aeaeae;
+  background-color: $default-highlight;
 }
 .outline:hover, .outline:focus {
-  background-color: #dce5fc;
+  background-color: $default-highlight;
 }
 .text:hover, .text:hover {
-  background-color: #dce5fc;
+  background-color: $default-highlight;
 }
