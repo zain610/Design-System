@@ -7,8 +7,9 @@ import Button from "./Button/Button"
 const App = () => {
   return (
     <div className="container">
-      <h1>Hello World</h1>
-      <Button />
+      <Button type="default" />
+      <Button type="outline" />
+      <Button type="text" />
     </div>
   )
 }

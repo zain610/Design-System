@@ -1,10 +1,11 @@
 button {
   padding: 0.5em 1em;
+  margin: 1rem;
 }
+/* Sizes - sm, md, lg */
 .btn-small {
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 0.4em;
-  
 }
 .btn-medium {
   font-size: 24px;
@@ -14,15 +15,33 @@ button {
   font-size: 32px;
   border-radius: 0.4em;
 }
+/* List of all variants */
 .default {
   background-color: #e0e0e0;
   color: #3f3f3f;
   border: none;
-}
-
-.shadow {
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.14);
 }
+.outline {
+  background:none;
+  color: #3d5afe;
+  border: 1.5px solid #3d5afe;
+}
+.text {
+  border: none;
+  color: #3d5afe;
+  background: none;
+  box-shadow: none;
+
+}
+/* Variant pseudo classes */
 .default:hover, .default:focus {
   background-color: #aeaeae;
 }
+.outline:hover, .outline:focus {
+  background-color: #dce5fc;
+}
+.text:hover, .text:hover {
+  background-color: #dce5fc;
+}
+/* shadow --- need some research on inner vs outer shadow and changign colors from default(grey) to blue ???? */

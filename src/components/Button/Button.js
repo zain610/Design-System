@@ -1,12 +1,17 @@
 import React from "react"
 import "./Button.css"
 
-const ButtonComponent = ({ type, size }) => {
+const ButtonComponent = ({ type = "default", size = "small", disableShadow = false }) => {
+  //generate class name based on props
+  const generateClassName = () => {
+    let className = `btn-${size} ${type} `
+    return className
+  }
+
+
   return (
     <div>
-      <button className='btn-small default shadow'>Default</button>
-      <button className='btn-medium default shadow'>Default</button>
-      <button className='btn-large default shadow'>Default</button>
+      <button className={generateClassName()}>Default</button>
     </div >
   )
 }
