@@ -23,9 +23,20 @@ $success-highlight: #bcffbf;
 
 $white: #ffffff;
 
+// function to create boreder
 @mixin border($color) {
   border: 1.5px solid $color;
 }
+
+@mixin outline($altBackground, $highlight) {
+  background:none;
+  color: $altBackground;
+  @include border($altBackground);
+  &:hover, &:focus {
+    background-color: $highlight;
+  }
+}
+
 /* Base button properties -- colors, spacing and typography */
 button {
   padding: 0.5em 1em;
@@ -51,12 +62,7 @@ button {
   color: $default-altBackground;
   // outline variation of the default color
   &.outline {
-    background:none;
-    color: $default-altBackground;
-    @include border($default-altBackground);
-    &:hover, &:focus {
-      background-color: $default-highlight;
-    }
+    @include outline($default-altBackground, $default-highlight )
   }
   // text variation of the default color
   &.text {
