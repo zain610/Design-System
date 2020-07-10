@@ -1,14 +1,25 @@
 /*  Variables  */
 $default-bgcolor: #e0e0e0;
-$default-color: #3f3f3f;
+$default-altBackground: #3f3f3f;
 $default-highlight: #aeaeae;
-$primary-color: #3d5afe;
+
+$primary-bgcolor: #3d5afe;
 $primary-altBackground: #003cd3; 
 $primary-highlight: #dce5fc;
+
 $secondary-bgColor:#00628f;
-$secondary-highlight: #d3f1fd;
-$secondary-color: #0487c4;
 $secondary-altBackground: #1d4a5f;
+$secondary-highlight: #d3f1fd;
+
+
+$danger-bgcolor: #a72828;
+$danger-altBackground:  #df2e2e;
+$danger-highlight:#fdd6d6;
+
+$success-bgcolor: #28a745;
+$success-altbackground: #01be0a;
+$success-highlight: #bcffbf;
+
 
 $white: #ffffff;
 
@@ -37,12 +48,12 @@ button {
 /* Default Button and its variation*/
 .default {
   background-color: $default-bgcolor;
-  color: $default-color;
+  color: $default-altBackground;
   // outline variation of the default color
   &.outline {
     background:none;
-    color: $default-color;
-    @include border($default-color);
+    color: $default-altBackground;
+    @include border($default-altBackground);
     &:hover, &:focus {
       background-color: $default-highlight;
     }
@@ -50,7 +61,7 @@ button {
   // text variation of the default color
   &.text {
     border: none;
-    color: $default-color;
+    color: $default-altBackground;
     background: none;
     box-shadow: none;
     &:hover, &:hover {
@@ -64,19 +75,19 @@ button {
 }
 /* Primary color  */
 .primary {
-  background-color: $primary-color;
+  background-color: $primary-bgcolor;
   color: $white;
   &.outline {
     background: none;
-    color: $primary-color;
-    @include border($primary-color);
+    color: $primary-bgcolor;
+    @include border($primary-bgcolor);
     &:hover, &:focus {
       background-color: $primary-highlight;
     }
   }
   &.text {
     border: none;
-    color: $primary-color;
+    color: $primary-bgcolor;
     background: none;
     box-shadow: none;
     &:hover, &:focus {
@@ -113,30 +124,53 @@ button {
   }
 }
 .danger {
-  background-color: #d32f2f;
+  background-color: $danger-bgcolor;
   color: $white;
   &.outline {
     background: none;
-    color: $white;
-    @include border(#d32f2f);
+    color: $danger-bgcolor;
+    @include border($danger-bgcolor);
     &:hover, &:focus {
-      background-color: $secondary-highlight;
+      background-color: $danger-highlight;
     }
   }
   &.text {
     border: none;
-    color: $secondary-color;
+    color: $danger-bgcolor;
     background: none;
     box-shadow: none;
     &:hover, &:focus {
-      background-color: #d32f2f;
+      background-color: $danger-highlight;
     }
   }
   &:hover, &:focus {
-    background-color: #ec2a2a;
+    background-color: $danger-altBackground;
   }
 }
-
+.success {
+  background-color: $success-bgcolor;
+  color: $white;
+  &.outline {
+    background: none;
+    color: $success-bgcolor;
+    @include border($success-bgcolor);
+    &:hover, &:focus {
+      background-color: $success-highlight;
+    }
+  }
+  &.text {
+    border: none;
+    color: $success-bgcolor;
+    background: none;
+    box-shadow: none;
+    &:hover, &:focus {
+      background-color: $success-highlight;
+    }
+  }
+  &:hover, &:focus {
+    background-color: $success-altbackground;
+  }
+}
 /* shadow -- adding box-shadow to button */
 .disableShadow {
   box-shadow: none;
