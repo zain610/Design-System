@@ -4,14 +4,14 @@ import "./Button.scss"
 const ButtonComponent = ({ type = "default", size = "small", disableShadow = false }) => {
   //generate class name based on props
   const generateClassName = () => {
-    let className = `btn-${size} ${type} shadow `
+    let className = `btn-${size} ${type} `
     return className
   }
   //btn-small disableShadow
   return (
     <div>
       <div>
-        <button className="btn-small default">Default</button>
+        <button className="btn-small default disableShadow">Default</button>
         <button className="btn-small default outline">Default</button>
         <button className="btn-small default text">Default</button>
       </div>
@@ -32,7 +32,7 @@ const ButtonComponent = ({ type = "default", size = "small", disableShadow = fal
         <button className="btn-small danger text">Danger</button>
       </div>
       <div>
-        <button className="btn-small success">Success</button>
+        <button className="btn-small success disableShadow">Success</button>
         <button className="btn-small success outline">Success</button>
         <button className="btn-small success text">Success</button>
       </div>
