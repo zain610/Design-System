@@ -3,7 +3,13 @@ $default-bgcolor: #e0e0e0;
 $default-color: #3f3f3f;
 $default-highlight: #aeaeae;
 $primary-color: #3d5afe;
+$primary-altBackground: #003cd3; 
 $primary-highlight: #dce5fc;
+$secondary-bgColor:#00628f;
+$secondary-highlight: #d3f1fd;
+$secondary-color: #0487c4;
+$secondary-altBackground: #1d4a5f;
+
 $white: #ffffff;
 
 @mixin border($color) {
@@ -47,7 +53,6 @@ button {
     color: $default-color;
     background: none;
     box-shadow: none;
-    text-decoration: underline;
     &:hover, &:hover {
       background-color: $default-highlight;
     }
@@ -64,29 +69,72 @@ button {
   &.outline {
     background: none;
     color: $primary-color;
-    @include border($primary-color)
+    @include border($primary-color);
+    &:hover, &:focus {
+      background-color: $primary-highlight;
+    }
   }
   &.text {
     border: none;
     color: $primary-color;
     background: none;
     box-shadow: none;
-    text-decoration: underline;
+    &:hover, &:focus {
+      background-color: $primary-highlight;
+    }
+  }
+  &:hover, &:focus {
+    background-color: $primary-altBackground;
   }
 }
 
-
-/* Colors */
-
 .secondary {
-  background-color: #455a64;
-  color: $white
-
+  background-color: $secondary-bgColor;
+  color: $white;
+  &.outline {
+    background: none;
+    color: $secondary-bgColor;
+    @include border($secondary-bgColor);
+    &:hover, &:focus {
+      background-color: $secondary-highlight;
+    }
+  }
+  &.text {
+    border: none;
+    color: $secondary-bgColor;
+    background: none;
+    box-shadow: none;
+    &:hover, &:focus {
+      background-color: $secondary-highlight;
+    }
+  }
+  &:hover, &:focus {
+    background-color: $secondary-altBackground;
+  }
 }
 .danger {
   background-color: #d32f2f;
-  color: $white
-
+  color: $white;
+  &.outline {
+    background: none;
+    color: $white;
+    @include border(#d32f2f);
+    &:hover, &:focus {
+      background-color: $secondary-highlight;
+    }
+  }
+  &.text {
+    border: none;
+    color: $secondary-color;
+    background: none;
+    box-shadow: none;
+    &:hover, &:focus {
+      background-color: #d32f2f;
+    }
+  }
+  &:hover, &:focus {
+    background-color: #ec2a2a;
+  }
 }
 
 /* shadow -- adding box-shadow to button */

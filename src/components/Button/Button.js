@@ -10,10 +10,24 @@ const ButtonComponent = ({ type = "default", size = "small", disableShadow = fal
   //btn-small disableShadow
   return (
     <div>
-      <button className="btn-small primary">Default</button>
-      <button className="btn-small primary outline">Default</button>
-      <button className="btn-small primary text">Default</button>
-    </div >
+      <div>
+        <button className="btn-small default">Default</button>
+        <button className="btn-small default outline">Default</button>
+        <button className="btn-small default text">Default</button>
+      </div>
+      <div>
+        <button className="btn-small primary">Primary</button>
+        <button className="btn-small primary outline">Primary</button>
+        <button className="btn-small primary text">Primary</button>
+      </div>
+
+      <div>
+        <button className="btn-small secondary">Secondary</button>
+        <button className="btn-small secondary outline">Secondary</button>
+        <button className="btn-small secondary text">Secondary</button>
+      </div >
+      <button className="btn-small danger">Danger</button>
+    </div>
   )
 }
 
