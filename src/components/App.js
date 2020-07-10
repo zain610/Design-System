@@ -8,6 +8,7 @@ const App = () => {
   return (
     <div className="container">
       <Button />
+      <Button color="success" type="outline" />
       {/* <Button type="default" />
       <Button type="outline" />
       <Button type="text" /> */}
