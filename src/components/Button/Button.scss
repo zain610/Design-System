@@ -1,7 +1,7 @@
 /*  Variables  */
 $default-bgcolor: #e0e0e0;
 $default-altBackground: #3f3f3f;
-$default-highlight: #aeaeae;
+$default-highlight: #d6d6d6;
 
 $primary-bgcolor: #3d5afe;
 $primary-altBackground: #003cd3; 
@@ -47,13 +47,13 @@ button {
 
 }
 /* Sizes - sm, md, lg */
-.btn-small {
-  font-size: 16px;
+.btn-sm {
+  font-size: 14px;
 }
-.btn-medium {
+.btn-md {
   font-size: 24px;
 }
-.btn-large {
+.btn-lg {
   font-size: 32px;
 }
 /* Default Button and its variation*/
@@ -182,6 +182,10 @@ button {
   box-shadow: none;
 }
 
+.btn-div {
+  display: grid;
+  justify-items: center;
+}
 
 
 /***
